@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="hidden">
+    <div class="loader">
+        <img src="img/img2.png" alt="">        
+        <!-- <span>Pre-loader</span> -->
+    </div>
+    <!-- swipper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?1" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?2" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?3" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?4" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?5" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?6" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?7" alt=""></div>
+          <div class="swiper-slide"><img src="https://source.unsplash.com/random/30×30?8" alt=""></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+
+
+
+      
+      <div class='cursor' id="cursor"></div>
+      <div class='cursor2' id="cursor2">					
+        <div class="ball"></div>
+      </div>
+      <div class='cursor3' id="cursor3"></div>
+
+
+
+      <ul class="accordian">
+        <li>home</li>
+        <li>pages</li>
+        <li>blog</li>
+        <li>special</li>
+      </ul>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+
+
+
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+    
+    <script>
+         $(window).on('load',function(){
+            $(".loader img").delay(100).fadeOut(100);
+                $(".loader").delay(500).fadeOut(500);
+                    setTimeout(function() {
+                        $("body").removeClass("hidden");
+                    }, 1000);
+        });
+    </script>
+</body>
+</html>

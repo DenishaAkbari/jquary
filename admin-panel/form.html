@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuse Angular- Angular Templete</title>
+    <!-- feacther icon  -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- fonts -->
+    <link rel="stylesheet" href="asserts/css/fonts.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="asserts/css/style.css">
+    <!-- media -->
+    <link rel="stylesheet" href="asserts/css/media.css">
+    <!-- favicon -->
+    <link rel="icon" href="asserts/img/logo.svg">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="login-card">
+            <div class="card-logo">
+                <a href="index.html">
+                    <img src="asserts/img/logo.svg" alt="logo">
+                </a>
+                <div class="login-content">
+                    <h1>Sign in</h1>
+                    <span>Don't have an account?</span>
+                    <a href="#">Sign up</a>
+                </div>  
+                <form action="index.html" method="">
+                    <label>Email address</label>
+                    <span class="sign">*</span>
+                    <input type="email" name="email" class="form-control">
+                    <label>Password</label>
+                    <span class="sign">*</span>
+                    <input type="password" name="password" class="form-control" required>
+                    <input type="checkbox" name="checkbox" class="form-check-input">
+                    <label class="box-content">Remember me</label>
+                    <a href="#" class="password">
+                        <span>Forgot password?</span>
+                    </a>
+                    <button type="submit" class="submit">Sign in</button>
+                </form>  
+                <div class="design">
+                    <span>Or continue with</span>
+                </div>
+                <div class="media d-flex">
+                    <div class="social-btn">
+                        <i data-feather="facebook"></i>
+                    </div>
+                    <div class="social-btn">
+                        <i data-feather="twitter"></i>
+                    </div>
+                    <div class="social-btn">
+                        <i data-feather="github"></i>
+                    </div>
+                </div>
+            </div>         
+        </div>  
+        <script src="asserts/js/jquery-3.7.1.min.js"></script>
+        <!-- main-jq -->
+        <script>
+            $(document).ready(function () {
+                $(".menu-bar").click(function () {
+                    $(".sidebar").toggleClass("close-sidebar")
+                });
+                $(".menu-bar").click(function () {
+                    $("header").toggleClass("close-header")
+                });
+                $(".sidebar-dropdown > a").click(function () {
+                    $(".sidebar-submenu").slideUp(200);
+                    if ($(this).parent().hasClass("active")) {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this).parent().removeClass("active");
+                    } else {
+                        $(".sidebar-dropdown").removeClass("active");
+                        $(this).next(".sidebar-submenu").slideDown(200);
+                        $(this).parent().addClass("active");
+                    }
+                });
+    
+                $(".map").click(function () {
+                    $(".flag-dropdown-menu").toggle();
+                });
+            });
+        </script>
+        <script>
+            feather.replace();
+        </script>
+        <!-- full-screen -->
+        <script>
+            function toggleFullscreen(elem) {
+                elem = elem || document.documentElement;
+                if (!document.fullscreenElement && !document.mozFullScreenElement &&
+                    !document.webkitFullscreenElement && !document.msFullscreenElement) {
+                    if (elem.requestFullscreen) {
+                        elem.requestFullscreen();
+                    } else if (elem.msRequestFullscreen) {
+                        elem.msRequestFullscreen();
+                    } else if (elem.mozRequestFullScreen) {
+                        elem.mozRequestFullScreen();
+                    } else if (elem.webkitRequestFullscreen) {
+                        elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    } else if (document.msExitFullscreen) {
+                        document.msExitFullscreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitExitFullscreen) {
+                        document.webkitExitFullscreen();
+                    }
+                }
+            }
+    
+            document.getElementById('btnFullscreen').addEventListener('click', function () {
+                toggleFullscreen();
+            });
+        </script>
+    </body>
+</html>
